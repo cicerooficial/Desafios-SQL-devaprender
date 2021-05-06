@@ -1,0 +1,25 @@
+-- CONSTRAINTS
+
+
+
+
+CREATE TABLE CarteiraMotorista(
+id		INT				NOT NULL, --NOT NULL CONSTRAINT - VERIFICA SE O CAMPO A SER INSERIDO NÃO ESTÁ VAZIO
+Nome	VARCHAR(255)	NOT NULL, --CHECK CONSTRAINT - VERIFICA A CONDICAO DE INSERÇÃO DE DADOS
+Idade	INT CHECK(Idade >= 18),
+Codigo  INT NOT NULL    UNIQUE    -- UNIQUE CONSTRAINT - IDENTIFICADOR UNICO PARA QUE OS VALORES NUNCA SE REPITAM
+);
+
+SELECT	*
+FROM	CarteiraMotorista;
+
+INSERT INTO CarteiraMotorista (id, Nome, Idade, Codigo)
+VALUES (1,'Henrique', 17, 123456);
+
+
+INSERT INTO CarteiraMotorista (id, Nome, Idade, Codigo)
+VALUES (1,'Henrique', 18, 123456);
+
+INSERT INTO CarteiraMotorista (id, Nome, Idade, Codigo)
+VALUES (1,'Henrique', 18, 123456);
+
